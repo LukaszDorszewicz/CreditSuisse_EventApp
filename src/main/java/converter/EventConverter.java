@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 public class EventConverter {
     private static final String FILE_NAME = "events.json";
 
-    public static List<EventFromJson> getEventsFromJson() {
+    public List<EventFromJson> getEventsFromJson() {
         List<EventFromJson> events = new ArrayList<>();
 
         try (Stream<String> stream = Files.lines(Paths.get(FILE_NAME))) {
@@ -26,5 +26,4 @@ public class EventConverter {
         }
         return events;
     }
-
 }

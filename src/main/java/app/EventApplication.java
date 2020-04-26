@@ -1,10 +1,12 @@
 package app;
 
 import converter.EventConverter;
+import service.EventService;
 
 public class EventApplication {
     public static void main(String[] args) {
 
-        //System.out.println(EventConverter.getEventsFromJson());
+            var eventService = new EventService();
+            eventService.runApp();
     }
 }
