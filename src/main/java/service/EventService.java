@@ -8,6 +8,7 @@ import model.EventToSave;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import repository.EventRepository;
+import repository.EventRepositoryImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,10 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 public class EventService {
-    private DatabaseConnection databaseConnection = new DatabaseConnection();
+    private final DatabaseConnection databaseConnection = new DatabaseConnection();
     private static final Logger logger = LoggerFactory.getLogger(EventService.class);
     private final EventConverter eventConverter = new EventConverter();
-    private final EventRepository eventRepository = new EventRepository();
+    private final EventRepository eventRepository = new EventRepositoryImpl();
 
     public void runApp() {
         var eventsFromJson = eventConverter.getEventsFromJson();
